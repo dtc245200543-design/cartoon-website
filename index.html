@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Góc Nhỏ Hoạt Hình — không gian xem hoạt hình thân thiện, dễ sử dụng cho cả gia đình."
+    />
+    <meta name="theme-color" content="#101522" />
+    <title>Góc Nhỏ Hoạt Hình — Cùng bé khám phá thế giới diệu kỳ</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#" aria-label="Góc Nhỏ Hoạt Hình - Trang chủ">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span class="brand-copy">
+            <strong>góc nhỏ</strong>
+            <span>HOẠT HÌNH</span>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Điều hướng chính">
+          <a class="nav-link is-active" href="#trang-chu">Trang chủ</a>
+          <a class="nav-link" href="#thu-vien">Thư viện phim</a>
+          <a class="nav-link" href="#gioi-thieu">Về chúng mình</a>
+        </nav>
+
+        <a class="header-pill" href="#thu-vien">
+          <span aria-hidden="true">☀</span>
+          <span>Góc xem an toàn</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="trang-chu">
+      <section class="welcome-banner" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <span class="eyebrow"><span class="sparkle">✦</span> RẠP PHIM CỦA BÉ</span>
+          <h1 id="welcome-title">Cùng bé khám phá<br />thế giới <span>diệu kỳ!</span></h1>
+          <p>Những câu chuyện hoạt hình đáng yêu, cho giờ xem phim thêm vui.</p>
+          <a class="explore-button" href="#thu-vien">Khám phá phim <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <span class="art-star star-one">✦</span>
+          <span class="art-star star-two">✧</span>
+          <span class="art-star star-three">·</span>
+          <div class="moon">☾</div>
+          <div class="planet planet-one"></div>
+          <div class="planet planet-two"></div>
+          <div class="cloud cloud-one"></div>
+          <div class="cloud cloud-two"></div>
+          <div class="little-astronaut">🐰</div>
+          <span class="art-caption">Mỗi ngày<br />một chuyến phiêu lưu</span>
+        </div>
+        <div class="banner-decoration decoration-one" aria-hidden="true">✳</div>
+        <div class="banner-decoration decoration-two" aria-hidden="true">✧</div>
+      </section>
+
+      <section class="library-section" id="thu-vien" aria-labelledby="library-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow section-eyebrow">CHỌN PHIM BÉ YÊU</span>
+            <h2 id="library-title">Tủ phim <span>nhà mình</span></h2>
+          </div>
+          <div class="library-tools">
+            <label class="search-box">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <span class="visually-hidden">Tìm phim theo tên</span>
+              <input id="search-input" type="search" placeholder="Tìm tên phim..." autocomplete="off" />
+              <kbd>/</kbd>
+            </label>
+            <label class="sort-control">
+              <span class="visually-hidden">Sắp xếp phim</span>
+              <select id="sort-select">
+                <option value="recent">Mới cập nhật</option>
+                <option value="popular">Xem nhiều nhất</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">⌄</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="library-layout">
+          <aside class="movie-sidebar" aria-label="Danh sách phim">
+            <div class="sidebar-heading">
+              <div>
+                <span class="sidebar-kicker">DÀNH RIÊNG CHO BÉ</span>
+                <h3>Phim hoạt hình <span id="movie-count" class="count-badge">0</span></h3>
+              </div>
+              <span class="sidebar-sparkle" aria-hidden="true">✳</span>
+            </div>
+            <div class="movie-list" id="movie-list" aria-live="polite"></div>
+            <div class="empty-state" id="empty-state" hidden>
+              <span aria-hidden="true">🔎</span>
+              <strong>Chưa tìm thấy phim</strong>
+              <p>Thử một từ khóa khác nhé!</p>
+            </div>
+            <div class="sidebar-note">
+              <span class="note-icon" aria-hidden="true">♡</span>
+              <p>Một góc nhỏ dễ thương<br />cho cả nhà cùng xem.</p>
+            </div>
+          </aside>
+
+          <section class="player-column" aria-label="Trình phát phim">
+            <div class="player-card">
+              <div class="player-topline">
+                <div class="now-playing">
+                  <span class="live-dot"></span>
+                  <span>ĐANG PHÁT</span>
+                </div>
+                <div class="player-quality"><span aria-hidden="true">◇</span> NGUỒN DEMO</div>
+              </div>
+              <div class="video-frame">
+                <video id="video-player" controls playsinline preload="metadata" poster="">
+                  Trình duyệt của bạn không hỗ trợ phát video.
+                </video>
+                <iframe
+                  id="youtube-player"
+                  title="Video hoạt hình trên YouTube"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                  hidden
+                ></iframe>
+                <div class="video-overlay" id="video-overlay" aria-hidden="true">
+                  <span class="play-decoration">▶</span>
+                  <span class="overlay-sparkle">✦</span>
+                  <span class="overlay-caption">Một thế giới<br />đầy màu sắc!</span>
+                </div>
+              </div>
+              <div class="player-info">
+                <div class="player-title-row">
+                  <div>
+                    <span class="film-label">PHIM HOẠT HÌNH</span>
+                    <h3 id="player-title">Đang tải phim...</h3>
+                  </div>
+                  <button class="favorite-button" id="favorite-button" type="button" aria-pressed="false">
+                    <span aria-hidden="true">♡</span>
+                    <span class="favorite-label">Yêu thích</span>
+                  </button>
+                </div>
+                <div class="player-meta">
+                  <span class="age-label"><span aria-hidden="true">☼</span> Cần bố mẹ cùng xem</span>
+                  <span class="meta-divider"></span>
+                  <span id="player-views">0 lượt xem</span>
+                </div>
+                <p id="player-description" class="player-description"></p>
+                <p class="demo-disclaimer">
+                  <strong>Bản mẫu học tập:</strong> video hiện tại là nguồn minh họa, chưa có thuyết minh tiếng Việt
+                  và chất lượng cần được xác minh. Hãy thay bằng video có bản quyền, 720p–1080p; YouTube có thể
+                  hiển thị quảng cáo do nền tảng kiểm soát.
+                </p>
+                <div class="player-actions" aria-label="Chọn trình phát">
+                  <button class="source-button is-selected" id="local-source" type="button" aria-pressed="true">
+                    <span aria-hidden="true">▷</span> Video
+                  </button>
+                  <button class="source-button" id="youtube-source" type="button" aria-pressed="false">
+                    <span aria-hidden="true">▶</span> YouTube
+                  </button>
+                  <span class="source-hint">Chọn cách phát phim</span>
+                </div>
+              </div>
+            </div>
+            <div class="parent-note">
+              <span class="parent-note-icon" aria-hidden="true">✦</span>
+              <p><strong>Góc xem vui vẻ</strong> — Bố mẹ cùng bé chọn câu chuyện yêu thích nhé!</p>
+              <span class="parent-note-sparkle" aria-hidden="true">✧</span>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="about-strip" id="gioi-thieu" aria-label="Giới thiệu">
+        <span class="about-icon" aria-hidden="true">✿</span>
+        <p><strong>Những phút giây thật vui.</strong> Một không gian phim hoạt hình đơn giản, thân thiện cho gia đình.</p>
+        <span class="about-stars" aria-hidden="true">✦ &nbsp; ✧</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-brand" href="#trang-chu"><span aria-hidden="true">✦</span> góc nhỏ hoạt hình</a>
+      <p>© <span id="current-year"></span> Góc Nhỏ Hoạt Hình. Cùng bé lớn lên với những câu chuyện đẹp.</p>
+      <a class="back-to-top" href="#trang-chu">Lên đầu trang ↑</a>
+    </footer>
+  </body>
+</html>
